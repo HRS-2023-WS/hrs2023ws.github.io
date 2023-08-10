@@ -1,0 +1,73 @@
+body main {
+  margin: 200px 200px;
+}
+
+@media screen and (max-width: 500px) {
+  body main .title_text_div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+body main .title_text_div .title_text {
+  font-size: 40px;
+  font-weight: 300;
+  border-bottom: solid 1px #333;
+  padding-bottom: .5em;
+  width: 5em;
+  text-align: center;
+}
+
+body main .choice_outer {
+  margin: 50px 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body main .choice_outer .choices {
+  padding: 100px 100px;
+  background: linear-gradient(92.84deg, #C4E8EE -3.12%, #F0C3E2 97%);
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  margin: 20px 40px;
+  -webkit-box-shadow: 8px 8px 8px rgba(0, 0, 0, 0);
+          box-shadow: 8px 8px 8px rgba(0, 0, 0, 0);
+  border-radius: 40px;
+  text-align: center;
+}
+
+body main .choice_outer .choices:hover {
+  -webkit-box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.25);
+          box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.25);
+}
+
+@media screen and (max-width: 500px) {
+  body main .choice_outer .choices {
+    padding: 100px 0;
+    width: calc(100vw - 40px);
+    margin: 20px 20px;
+  }
+}
+
+body main .choice_outer .choices p {
+  color: white;
+  font-size: 30px;
+  font-weight: 600;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,88 @@
+$breakpoints: ( 'sm': 'screen and (max-width: 500px)', 'md': 'screen and (max-width: 768px)', 'lg': 'screen and (max-width: 1000px)', 'xl': 'screen and (max-width: 1200px)', ) !default;
+@mixin mq($breakpoint: md) {
+    @media #{map-get($breakpoints, $breakpoint)} {
+        @content;
+    }
+}
+
+body {
+    main {
+        margin: 100px 200px;
+        @include mq(sm) {
+            margin: 100px 0;
+        }
+        .type_all {
+            margin: 40px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #FCFCFC;
+            border-radius: 50px;
+            min-width: 100px;
+            .club_type,
+            .yushi_type {
+                color: #C4C4C4;
+                border-radius: 50px;
+                padding: 10px 50px;
+                p {
+                    font-weight: 500;
+                }
+            }
+            .selected {
+                background: linear-gradient(91.56deg, #C4E8EE 0%, #F0C3E2 106.66%);
+                color: white;
+            }
+        }
+        .video_section {
+            margin: 100px auto;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            align-items: center;
+            .content_info {
+                margin: 0 40px;
+                .content_class {
+                    font-size: 20px;
+                    margin-bottom: 20px;
+                    color: #AFAFAF;
+                    font-weight: 700;
+                }
+                .content_title {
+                    font-size: 30px;
+                }
+            }
+        }
+        .same_grade_list {
+            display: flex;
+            justify-content: start;
+            flex-wrap: wrap;
+            align-items: center;
+            @include mq(sm) {
+                margin-top: 50px;
+                justify-content: center;
+            }
+            // overflow-y: scroll;
+            .item {
+                margin: 20px;
+                @include mq(sm) {
+                    margin: 50px 20px;
+                }
+                text-align: center;
+                .thumbnail_pic {
+                    margin: auto;
+                    width: 350px;
+                    height: 200px;
+                    background: hsl(317, 100%, 95%);
+                    object-fit: contain;
+                }
+                .item_title {
+                    margin-top: 20px;
+                    font-size: 24px;
+                    margin-bottom: 20px;
+                    color: #AFAFAF;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+}

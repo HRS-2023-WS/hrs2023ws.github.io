@@ -1,0 +1,84 @@
+$breakpoints: ( 'sm': 'screen and (max-width: 500px)', 'md': 'screen and (max-width: 768px)', 'lg': 'screen and (max-width: 1000px)', 'xl': 'screen and (max-width: 1200px)', ) !default;
+@mixin mq($breakpoint: md) {
+    @media #{map-get($breakpoints, $breakpoint)} {
+        @content;
+    }
+}
+
+body {
+    main {
+        margin: 100px 200px;
+        @include mq(sm) {
+            margin: 100px 0;
+        }
+        .grade_list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            align-items: center;
+            p {
+                font-size: 20px;
+                font-weight: 300;
+                margin: 30px 50px;
+                @include mq(sm) {
+                    margin: 20px 30px;
+                }
+            }
+            .grade_hr {
+                width: 1px;
+                background-color: #AFAFAF;
+                height: 32px;
+            }
+        }
+        .video_section {
+            margin: 100px auto;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            align-items: center;
+            .content_info {
+                .content_class {
+                    font-size: 40px;
+                    margin-bottom: 20px;
+                    color: #AFAFAF;
+                    font-weight: 700;
+                }
+                .content_title {
+                    font-size: 30px;
+                }
+            }
+        }
+        .same_grade_list {
+            display: flex;
+            justify-content: start;
+            flex-wrap: wrap;
+            align-items: center;
+            @include mq(sm) {
+                margin-top: 50px;
+                justify-content: center;
+            }
+            // overflow-y: scroll;
+            .item {
+                margin: 20px;
+                @include mq(sm) {
+                    margin: 50px 20px;
+                }
+                text-align: center;
+                .thumbnail_pic {
+                    margin: auto;
+                    width: 350px;
+                    height: 200px;
+                    background: hsl(317, 100%, 95%);
+                    object-fit: contain;
+                }
+                .item_title {
+                    margin-top: 20px;
+                    font-size: 24px;
+                    margin-bottom: 20px;
+                    color: #AFAFAF;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,56 @@
+$breakpoints: ( 'sm': 'screen and (max-width: 500px)', 'md': 'screen and (max-width: 768px)', 'lg': 'screen and (max-width: 1000px)', 'xl': 'screen and (max-width: 1200px)', ) !default;
+@mixin mq($breakpoint: md) {
+    @media #{map-get($breakpoints, $breakpoint)} {
+        @content;
+    }
+}
+
+body {
+    main {
+        margin: 200px 200px;
+        .title_text_div {
+            @include mq(sm) {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .title_text {
+                font-size: 40px;
+                font-weight: 300;
+                border-bottom: solid 1px #333;
+                padding-bottom: .5em;
+                width: 5em;
+                text-align: center;
+            }
+        }
+        .choice_outer {
+            margin: 50px 0 0;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            .choices {
+                padding: 100px 100px;
+                background: linear-gradient(92.84deg, #C4E8EE -3.12%, #F0C3E2 97%);
+                transition: all .5s;
+                margin: 20px 40px;
+                box-shadow: 8px 8px 8px rgba(0, 0, 0, 0);
+                &:hover {
+                    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.25);
+                }
+                border-radius: 40px;
+                text-align: center;
+                @include mq(sm) {
+                    padding: 100px 0;
+                    width: calc(100vw - 40px);
+                    margin: 20px 20px;
+                }
+                p {
+                    color: white;
+                    font-size: 30px;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}

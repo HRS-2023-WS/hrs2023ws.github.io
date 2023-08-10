@@ -1,0 +1,387 @@
+$breakpoints: ( 'sm': 'screen and (max-width: 500px)', 'md': 'screen and (max-width: 768px)', 'lg': 'screen and (max-width: 1000px)', 'xl': 'screen and (max-width: 1200px)', ) !default;
+@mixin mq($breakpoint: md) {
+    @media #{map-get($breakpoints, $breakpoint)} {
+        @content;
+    }
+}
+
+
+/* fonts */
+
+@font-face {
+    font-family: 'postnobillscolomboExtrabold';
+    src: url('../../fonts/postnobillscolombo-extrabold.ttf');
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+p,
+a,
+h1,
+h2 {
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+a {
+    color: black !important;
+    text-decoration: none;
+}
+
+h2 {
+    font-size: calc(1.25rem + ((1vw - 5.6px) * 0.7353));
+    /* 20px - 30px */
+    line-height: calc(1.5 * (1.25rem + ((1vw - 5.6px) * 0.7353)));
+    letter-spacing: 0.2em;
+    font-weight: 500;
+}
+
+p {
+    font-size: calc(0.875rem + ((1vw - 3.75px) * 0.3883));
+    /* 15px - 20px */
+    line-height: calc(1.5 * (0.9375rem + ((1vw - 5.6px) * 0.3676)));
+    letter-spacing: 0.2em;
+}
+
+
+/* header */
+
+header {
+    width: 100vw;
+    height: 50px;
+    background: transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    text-align: right;
+    background: linear-gradient(92.84deg, #C4E8EE -3.12%, #F0C3E2 97%);
+}
+
+header ul {
+    display: flex;
+    padding: 10px 50px 0;
+    justify-content: flex-end;
+}
+
+header li {
+    list-style: none;
+    line-height: 24px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: normal;
+    margin: auto 20px;
+}
+
+header li p {
+    @include mq(sm) {
+        color: #333;
+    }
+    font-size: 80%;
+    margin-bottom: 0px;
+    color: white;
+}
+
+
+/* アンダーラインの作成 */
+
+.underline {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.underline::after {
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 0.05em;
+    background: #fff;
+    transform: scale(0, 1);
+    transform-origin: left top;
+    transition: transform .3s;
+}
+
+.underline:hover::after {
+    transform-origin: right top;
+    transform: scale(1, 1);
+}
+
+
+/* text_size */
+
+.text_22 {
+    font-size: 22px;
+    line-height: 30px;
+    font-weight: normal;
+    margin-bottom: 24px;
+}
+
+.text_32 {
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: normal;
+    margin: 12px 0;
+}
+
+.hover_shadow {
+    cursor: pointer;
+    transition: .5s;
+}
+
+.hover_shadow:hover {
+    text-shadow: -.2em .2em 2px rgba(255, 0, 0, 0.4), .2em -.2em 2px rgba(0, 194, 255, 0.4);
+}
+
+
+/* logo icon */
+
+.logo_icon_image {
+    width: calc(2.5rem + ((1vw - 3.75px) * 1.9417));
+    height: calc(2.5rem + ((1vw - 3.75px) * 1.9417));
+    margin: 50px calc(3.75rem + ((1vw - 3.75px) * 1.9417)) 0;
+}
+
+
+/* select category section */
+
+.select_category_section {
+    margin: 40px 40px 50px;
+    width: calc(100vw - 80px);
+    text-align: center;
+    display: flex;
+    align-items: top;
+    justify-content: center;
+}
+
+.select_category_child {
+    text-align: left;
+    margin: 0 calc(6.875rem + ((1vw - 10.4px) * 3.4091));
+    ;
+    position: relative;
+}
+
+.left_section:after,
+.middle_section:after {
+    content: '';
+    border-right: 1px solid #AFAFAF;
+    position: absolute;
+    top: 0;
+    right: calc(-1 * (6.875rem + ((1vw - 10.4px) * 3.4091)));
+    height: 100%;
+}
+
+
+/* search section */
+
+.search_section {
+    margin: 170px calc(3.75rem + ((1vw - 3.75px) * 2.589)) 50px;
+    width: calc(100vw - 2 * (3.75rem + ((1vw - 3.75px) * 2.589)));
+    height: 50px;
+}
+
+.search_div {
+    width: 250px;
+    max-width: 100%;
+    border-bottom: 1px solid #303030;
+    float: right;
+}
+
+.search_works_input {
+    width: calc(100% - 30px);
+    padding: 5px;
+    border: 0;
+    color: #303030;
+    margin: 0;
+    height: 30px;
+}
+
+.search_icon {
+    height: 20px;
+    margin: 5px;
+    float: right;
+}
+
+input[type=text]:focus {
+    outline: none;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    margin: 0 0;
+    background: linear-gradient(92.84deg, #C4E8EE -3.12%, #F0C3E2 97%);
+}
+
+.logo {
+    font-size: 24px;
+}
+
+
+/*------------------------------
+
+ここから下がハンバーガーメニュー
+に関するCSS
+
+------------------------------*/
+
+
+/* チェックボックスは非表示に */
+
+.drawer-hidden {
+    display: none;
+}
+
+
+/* ハンバーガーアイコンの設置スペース */
+
+.drawer-open {
+    display: flex;
+    height: 40px;
+    width: 40px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 100;
+    cursor: pointer;
+}
+
+
+/* ハンバーガーメニューのアイコン */
+
+.drawer-open span,
+.drawer-open span:before,
+.drawer-open span:after {
+    content: '';
+    display: block;
+    height: 1.5px;
+    width: 25px;
+    border-radius: 3px;
+    background: white;
+    transition: 0.5s;
+    position: absolute;
+}
+
+
+/* 三本線のうち一番上の棒の位置調整 */
+
+.drawer-open span:before {
+    bottom: 8px;
+}
+
+
+/* 三本線のうち一番下の棒の位置調整 */
+
+.drawer-open span:after {
+    top: 8px;
+}
+
+
+/* アイコンがクリックされたら真ん中の線を透明にする */
+
+#drawer-check:checked~.drawer-open span {
+    background: rgba(255, 255, 255, 0);
+}
+
+
+/* アイコンがクリックされたらアイコンが×印になように上下の線を回転 */
+
+#drawer-check:checked~.drawer-open span::before {
+    background-color: #333;
+    bottom: 0;
+    transform: rotate(45deg);
+}
+
+#drawer-check:checked~.drawer-open span::after {
+    background-color: #333;
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+
+/* メニューのデザイン*/
+
+.drawer-content {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 100%;
+    /* メニューを画面の外に飛ばす */
+    z-index: 99;
+    background: #fff;
+    transition: .5s;
+}
+
+
+/* アイコンがクリックされたらメニューを表示 */
+
+#drawer-check:checked~.drawer-content {
+    left: 0;
+    /* メニューを画面に入れる */
+}
+
+@media screen and (max-width: 1030px) {
+    .select_category_section {
+        display: block;
+    }
+    .select_category_child {
+        margin: 50px calc(6.875rem + ((1vw - 10.4px) * 3.4091));
+    }
+    .left_section:after,
+    .middle_section:after {
+        content: '';
+        border-right: 0;
+        border-bottom: 1px solid #AFAFAF;
+        bottom: -25px;
+        right: auto;
+        left: 0;
+        width: 100%;
+        height: auto;
+        pointer-events: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .header_pc {
+        display: none;
+    }
+    header {
+        display: block;
+        background: transparent;
+    }
+    header ul {
+        display: block;
+        width: 80vw;
+        text-align: left;
+        margin: 10vh 10vw;
+    }
+    header li {
+        font-size: 22px;
+        line-height: 30px;
+        margin: 50px 20px;
+    }
+    .select_category_child {
+        margin: 40px 20px;
+    }
+    .underline {
+        position: relative;
+        display: block;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    .underline::after {
+        display: none
+    }
+}
+
+@media screen and (min-width: 601px) {
+    .header {
+        display: none;
+    }
+}

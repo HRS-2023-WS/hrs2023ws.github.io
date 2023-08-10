@@ -1,0 +1,121 @@
+body main {
+  margin: 100px 200px;
+}
+
+@media screen and (max-width: 500px) {
+  body main {
+    margin: 100px 0;
+  }
+}
+
+body main .grade_list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body main .grade_list p {
+  font-size: 20px;
+  font-weight: 300;
+  margin: 30px 50px;
+}
+
+@media screen and (max-width: 500px) {
+  body main .grade_list p {
+    margin: 20px 30px;
+  }
+}
+
+body main .grade_list .grade_hr {
+  width: 1px;
+  background-color: #AFAFAF;
+  height: 32px;
+}
+
+body main .video_section {
+  margin: 100px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body main .video_section .content_info .content_class {
+  font-size: 40px;
+  margin-bottom: 20px;
+  color: #AFAFAF;
+  font-weight: 700;
+}
+
+body main .video_section .content_info .content_title {
+  font-size: 30px;
+}
+
+body main .same_grade_list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (max-width: 500px) {
+  body main .same_grade_list {
+    margin-top: 50px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+body main .same_grade_list .item {
+  margin: 20px;
+  text-align: center;
+}
+
+@media screen and (max-width: 500px) {
+  body main .same_grade_list .item {
+    margin: 50px 20px;
+  }
+}
+
+body main .same_grade_list .item .thumbnail_pic {
+  margin: auto;
+  width: 350px;
+  height: 200px;
+  background: #ffe6f8;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+body main .same_grade_list .item .item_title {
+  margin-top: 20px;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #AFAFAF;
+  font-weight: 400;
+}
+
+.grade_list p {
+  cursor:pointer
+}
+/*# sourceMappingURL=style.css.map */
